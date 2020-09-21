@@ -1,0 +1,14 @@
+{
+  "name": "jeddy-data-table",
+  "version": "0.0.3",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "description": "Jeddy Data Table",
+  "keywords": [
+    "UI",
+    "Reactive",
+    "Web"
+  ],
+  "author": "Jeraldy Deus | deusjeraldy@gmail.com",
+  "license": "ISC"
+}
