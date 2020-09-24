@@ -2,22 +2,21 @@ import Thead from "jeddy/dom/Thead";
 import Tr from "jeddy/dom/Tr";
 import Th from "jeddy/dom/Th";
 
-const thStyle = (i) => ({
+const thStyle = {
     padding: '8px',
-    borderLeft: i != 0 ? '1px solid #ddd' : '',
     textAlign: 'left',
-    borderTop: '1px solid #ddd'
-})
+    border: '1px solid #ddd'
+}
 
 export default (header) => {
     return Thead({
         children: [
             Tr({
-                children: header.map((head, index) => {
+                children: header.map((head) => {
                     return Th({
                         children: [head.title], style: {
                             ...head.style,
-                            ...thStyle(index)
+                            ...thStyle
                         }
                     })
                 }),

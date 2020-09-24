@@ -1,9 +1,19 @@
 {
-    "compilerOptions": {
-      "outDir": "./public/",
-      "noImplicitAny": true,
-      "module": "es6",
-      "target": "es5",
-      "allowJs": true
-    }
-  }
+  "compilerOptions": {
+    "outDir": "./lib/",
+    "module": "commonjs",
+    "target": "es2016",
+    "declaration": true,
+    "sourceMap": true,
+    "allowJs": true
+  },
+  "include": [
+    "src/WLib/**/*"
+  ],
+  "exclude": [
+    "**/lib",
+    "**/*.spec.ts",
+    "webpack.config.js",
+    "node_modules"
+  ]
+}

@@ -1,33 +1,25 @@
 import MockData from "./MockData";
-import Center from "jeddy/layouts/Center";
 import CheckBoxInput from "jeddy/dom/CheckBoxInput";
 import DataTable from "./WLib/index";
 import Card from "jeddy/widgets/Card";
-import Button from "jeddy/dom/Button";
-import Tfoot from "jeddy/dom/Tfoot";
-import Tr from "jeddy/dom/Tr";
-import Td from "jeddy/dom/Td";
 import SearchIcon from "./WLib/Assets/SearchIcon";
 import Div from "jeddy/dom/Div";
-
 function ActionButton(name) {
     return CheckBoxInput({
-        onClick: () => {
-            console.log(name)
+        onClick: function () {
+            console.log(name);
         }
-    })
+    });
 }
-
-const App = () => {
-    console.log("CALLED....")
+var App = function () {
+    console.log("CALLED....");
     return Div({
         children: [
             myTable('users')
         ],
         style: { padding: '50px' }
-    })
-}
-
+    });
+};
 function myTable(_name) {
     return Card({
         children: [
@@ -51,7 +43,7 @@ function myTable(_name) {
                 //     Button({ children: ["Add New"] }),
                 //     Button({ children: ["Upload"], style: { marginLeft: '4px' } })
                 // ],
-                iterator: (row, index) => {
+                iterator: function (row, index) {
                     return {
                         rowData: [
                             index + 1,
@@ -63,19 +55,8 @@ function myTable(_name) {
                             row.address.street,
                             ActionButton(row.name)
                         ]
-                    }
+                    };
                 },
-                // footer: Tfoot({
-                //     children: [
-                //         Tr({
-                //             children: [
-                //                 Td({ colspan: 3, style: tdStyle }),
-                //                 Td({ children: ["321,312,534,543"], style: tdStyle }),
-                //                 Td({ colspan: 4, style: tdStyle }),
-                //             ]
-                //         })
-                //     ]
-                // })
             })
         ],
         style: {
@@ -83,12 +64,10 @@ function myTable(_name) {
             minHeight: '450px',
             padding: '30px'
         }
-    })
+    });
 }
-
-const tdStyle = {
+var tdStyle = {
     padding: '8px',
     border: '1px solid #ddd',
-}
-
-export default App
+};
+export default App;

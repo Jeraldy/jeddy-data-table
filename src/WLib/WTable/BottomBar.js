@@ -3,8 +3,9 @@ import Row from "jeddy/layouts/Row"
 import A from "jeddy/dom/A"
 import RowAlignment from "jeddy/layouts/RowAlignment"
 import { dispatch } from "jeddy/jredux"
-import Icon from "jeddy/widgets/Icon"
-import Icons from "jeddy/utils/Icons"
+import IconLeft from "./../Assets/arrow_left.png";
+import IconRight from "./../Assets/arrow_right.png";
+import Img from "jeddy/dom/Img";
 import Span from "jeddy/dom/Span";
 
 export default (params) => {
@@ -37,18 +38,20 @@ export default (params) => {
                         children: [
                             A({
                                 children: [
-                                    Icon({
-                                        name: Icons.keyboard_arrow_left
-                                    })
+                                    Img({
+                                        src: IconLeft,
+                                        style: { marginTop: '6px', marginLeft: '2px', height: '20px', width: '20px' }
+                                    }),
                                 ],
                                 href: "#",
                                 onClick: () => dispatch(actions.filterPrev()),
                             }),
                             A({
                                 children: [
-                                    Icon({
-                                        name: Icons.keyboard_arrow_right
-                                    })
+                                    Img({
+                                        src: IconRight,
+                                        style: { marginTop: '6px', marginLeft: '2px', height: '20px', width: '20px' }
+                                    }),
                                 ],
                                 href: "#",
                                 style: { marginLeft: '8px' },

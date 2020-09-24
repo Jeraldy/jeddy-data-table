@@ -2,10 +2,10 @@
 npm run compile
 
 ## Copy Types
-xcopy /s lib\*.d.ts types\
+#xcopy /s lib\*.d.ts types\
 
 ## Copy Styles
-xcopy /s src\styles\* lib\styles\
+#xcopy /s src\styles\* lib\styles\
 
 ## Remove types from lib
 rm -r lib\*.d.ts
@@ -17,7 +17,7 @@ rm -r lib\**\*.js.map
 rm -r lib\**\**\*.js.map
 
 ## Put back css types
-xcopy /s src\css\*.d.ts lib\css\
+#xcopy /s src\css\*.d.ts lib\css\
 
 ## Publish Jeddy Library
 cd lib

@@ -19,20 +19,20 @@
     "jbcp:darwin:linux": "cp -r public build",
     "jpx": "run-script-os",
     "jpx:win32": "xcopy node_modules\\jeddy-types node_modules\\@types\\jeddy\\ /S /Q /Y",
-    "jpx:darwin:linux": "cp -r node_modules/jeddy-types node_modules/@types/jeddy"
+    "jpx:darwin:linux": "cp -r node_modules/jeddy-types node_modules/@types/jeddy",
+    "compile": "tsc"
   },
   "keywords": [],
   "author": "Jeraldy Deus",
   "license": "ISC",
   "devDependencies": {
     "@nx-js/observer-util": "^4.2.2",
-    "axios": "^0.19.2",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.4.2",
     "extract-loader": "^3.1.0",
     "file-loader": "^5.0.2",
-    "jeddy": "^1.0.147",
-    "jeddy-types": "^1.0.147",
+    "jeddy": "^1.0.149",
+    "jeddy-types": "^1.0.149",
     "node-sass": "^4.13.1",
     "run-script-os": "^1.1.1",
     "sass-loader": "^8.0.2",
@@ -43,5 +43,8 @@
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1",
     "webpack-merge": "^5.1.4"
+  },
+  "dependencies": {
+    "axios": "^0.20.0"
   }
 }

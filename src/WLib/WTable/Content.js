@@ -4,11 +4,13 @@ import WBody from "./WBody";
 
 export default (params) => {
     const { args, state } = params
+    const { footer, header } = args
     return Table({
         children: [
-            WThead(args.header),
-            WBody(state.data, args)
+            WThead(header),
+            WBody(state.data, args),
+            footer || null
         ],
-        style: { borderCollapse: 'collapse', width: '100%'},
+        style: { borderCollapse: 'collapse', width: '100%' },
     })
 }

@@ -9,10 +9,6 @@ const InternalWidget = (args: any) => {
         throw Error("You must provide a unique name for this widget..! Eg. name:'myUniqueName'")
     }
     let cloneData = [...args.data]
-    // cloneData = cloneData.map((row, index) => {
-    //     let _row = { ...row, tableIndex: index + 1 }
-    //     return _row
-    // })
     let display = args.display || 10
     let _RLib = RLib({
         name,
@@ -33,7 +29,11 @@ const ExposedWidget = (params: {
     data: Array<{}>,
     display?: number,
     header: Array<{ title: any, style?: {} }>,
-    iterator: (row: {}, index: number) => { rowData: [], rowStyle?: CSS.Properties }
+    iterator: (row: {}, index: number) => { rowData: [], rowStyle?: CSS.Properties },
+    footer?: HTMLElement,
+    actionItems?: Array<HTMLElement | Text>,
+    searchable?: boolean,
+    serverSide?: boolean
 }) => InternalWidget(params)
 
 export default ExposedWidget;
