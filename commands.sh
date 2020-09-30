@@ -25,7 +25,7 @@ cd lib
 npm version patch
 npm publish --access=public
 
-cd..
+cd ..
 
 git add .
 git commit -m "option"

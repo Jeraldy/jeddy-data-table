@@ -7,34 +7,35 @@ import Button from "jeddy/dom/Button";
 import Tfoot from "jeddy/dom/Tfoot";
 import Tr from "jeddy/dom/Tr";
 import Td from "jeddy/dom/Td";
-import SearchIcon from "./WLib/Assets/SearchIcon";
 import Div from "jeddy/dom/Div";
-
+import { connect, dispatch } from "jeddy/jredux";
+import { actions } from "./Reducers/RTest";
+const { handleChange } = actions
 function ActionButton(name) {
     return CheckBoxInput({
-        onClick: () => {
-            console.log(name)
-        }
+        onClick: () => dispatch(handleChange())
+        // {
+        //     console.log(name)
+        // }
     })
 }
 
-const App = () => {
-    console.log("CALLED....")
+const App = ({ data }) => {
+    console.log(data)
     return Div({
         children: [
-            myTable('users')
+            myTable('users', data)
         ],
         style: { padding: '50px' }
     })
 }
 
-function myTable(_name) {
+function myTable(_name, data) {
     return Card({
         children: [
-            SearchIcon(),
             DataTable({
                 name: _name,
-                data: MockData,
+                data: data,//MockData,
                 header: [
                     { title: "#", style: { width: '20px' } },
                     { title: "Name" },
@@ -91,4 +92,4 @@ const tdStyle = {
     border: '1px solid #ddd',
 }
 
-export default App
+export default connect((state) => ({ ...state.RTest }))(App)
