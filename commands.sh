@@ -8,13 +8,13 @@ npm run compile
 #xcopy /s src\styles\* lib\styles\
 
 ## Remove types from lib
-rm -r lib\*.d.ts
-rm -r lib\**\*.d.ts
-rm -r lib\**\**\*.d.ts
+# rm -r lib\*.d.ts
+# rm -r lib\**\*.d.ts
+# rm -r lib\**\**\*.d.ts
 
-rm -r lib\*.js.map
-rm -r lib\**\*.js.map
-rm -r lib\**\**\*.js.map
+# rm -r lib\*.js.map
+# rm -r lib\**\*.js.map
+# rm -r lib\**\**\*.js.map
 
 ## Put back css types
 #xcopy /s src\css\*.d.ts lib\css\
