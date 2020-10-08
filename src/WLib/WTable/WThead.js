@@ -17,7 +17,8 @@ export default (header) => {
                         children: [head.title], style: {
                             ...head.style,
                             ...thStyle
-                        }
+                        },
+                        scope: "col"
                     })
                 }),
                 style: {
